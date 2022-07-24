@@ -3,12 +3,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-* #navbar.sticky {
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 1em, 2em;
-}
 
 html {
   font-size: 62.5%;
@@ -16,16 +10,17 @@ html {
 }
 
 .container {
-  background-image: url(/img/fixed.png);
+  background-image: linear-gradient(rgba(231, 98, 98, 0.5), rgba(62, 83, 70, 0.5)), url(/img/fixed.png);
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
   width: 100vw;
   height: 100vh;
+  text-align: center;
 }
 .container header {
   width: 100wh;
-  height: 35rem;
+  height: 15rem;
   position: sticky;
   background-image: url(/img/fixed2.png);
   background-position: center;
@@ -36,7 +31,7 @@ html {
   font-family: "Square Peg", cursive;
   font-size: 9rem;
   text-align: center;
-  color: rgb(25, 132, 198);
+  color: rgb(216, 67, 26);
 }
 .container header .description {
   font-family: "Square Peg", cursive;
@@ -45,7 +40,7 @@ html {
   text-align: center;
 }
 .container header span {
-  color: rgb(121, 89, 202);
+  color: rgb(98, 69, 172);
 }
 .container nav {
   display: flex;
@@ -58,9 +53,18 @@ html {
   border: 10rem;
   font-size: 2.5rem;
   padding: 1rem;
-  background: rgba(49, 125, 134, 0.5);
+  background: rgba(17, 173, 95, 0.7);
+}
+.container .fixed .active {
+  text-decoration: underline;
+  transition: 0.3ms ease text-decoration;
+  color: #50eb3b;
+}
+.container .navbar.sticky {
   position: fixed;
-  z-index: 99;
+  background-color: rgba(54, 115, 148, 0.5);
+  top: 0;
+  height: 7rem;
 }
 .container span {
   padding: 0.5rem;
@@ -79,11 +83,24 @@ html {
   align-items: center;
   justify-content: space-around;
   font-size: 5rem;
-  padding-top: 20rem;
+  padding-top: 12rem;
+  color: rgb(216, 65, 75);
+  z-index: 999;
+}
+.container .gig:hover:hover {
+  color: rgb(196, 111, 111);
+}
+.container .feedback {
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 3rem;
+  color: rgb(241, 67, 13);
 }
 .container .reviews {
   text-align: center;
-  padding: 2rem;
+  padding-top: 7rem;
+  color: rgba(230, 230, 230, 0.776);
+  font-family: "EB Garamond", serif;
 }
 .container .reviews img {
   height: 3.5rem;
@@ -91,6 +108,66 @@ html {
 .container .reviews p {
   padding-top: 2rem;
   font-size: 2.5rem;
+}
+.container .modal_body {
+  padding-top: 2vh;
+  cursor: pointer;
+}
+.container .h2 {
+  padding-top: 2rem;
+  font-size: 2rem;
+  color: rgb(211, 59, 48);
+}
+.container .modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(88, 199, 171, 0.4); /* Black w/ opacity */
+  /* Modal Content */
+}
+.container .modal .modal-content {
+  background-color: rgba(14, 155, 165, 0.7);
+  margin: auto;
+  padding: 5rem;
+  border: 1px solid #888;
+  width: 80vw;
+  height: 50vh;
+  /* The Close Button */
+}
+.container .modal .modal-content h2 {
+  font-size: 2rem;
+}
+.container .modal .modal-content p {
+  font-size: 2rem;
+}
+.container .modal .modal-content input {
+  background-color: rgba(173, 222, 236, 0.5);
+  border: none;
+  border-radius: 20%;
+}
+.container .modal .modal-content .close {
+  color: #f80404;
+  float: right;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.container .modal .modal-content .ebcf_close:hover,
+.container .modal .modal-content .ebcf_close:focus {
+  color: rgba(131, 24, 24, 0.5);
+  text-decoration: none;
+  cursor: pointer;
+}
+.container .modal .modal-content .form {
+  font-size: 2rem;
+  color: rgb(131, 36, 36);
 }
 
 .container1 {
@@ -140,61 +217,63 @@ html {
 .container3 {
   height: 100vh;
   width: 100wh;
-  background-image: linear-gradient(rgba(32, 67, 45, 0.5), rgba(40, 70, 52, 0.5)), url(/img/last.jpg);
+  background-image: linear-gradient(rgba(154, 210, 175, 0.5), rgba(40, 70, 52, 0.5)), url(/img/last.jpg);
   background-size: cover;
   background-position: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 10rem;
 }
-.container3 header {
-  height: 25vh;
-  width: 100vw;
-  align-items: center;
-}
-.container3 header div {
-  align-items: center;
-  height: 15vh;
-  width: 95vw;
-}
-.container3 header p {
-  padding: 14rem;
-  font-size: 4rem;
-  color: rgb(237, 236, 240);
-  text-align: center;
-}
-.container3 .CAROUSEL-content {
-  margin-top: 5%;
-  border: 2rem rgb(128, 51, 0);
-  height: 23vh;
-  width: 100vw;
+.container3 .carousel {
   position: relative;
-  background-color: transparent;
-  display: grid;
-  text-align: center;
-  grid-template-columns: repeat(5, 1fr);
+}
+.container3 .carousel .carousel_item {
+  height: 80vh;
+  width: 50vw;
+  background-color: #888;
+  color: #f80404;
+  font-size: 4rem;
+  display: flex;
   align-items: center;
-  flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
+  display: none;
 }
-.container3 .CAROUSEL-content video {
-  height: 16rem;
-  width: 16rem;
+.container3 .carousel .carousel_item .img {
+  height: 80vh;
+  width: 50vw;
 }
-.container3 .CAROUSEL-content video:hover {
-  height: 50rem;
-  width: 50rem;
+.container3 .carousel .carousel_item video {
+  height: 80vh;
+  width: 50vw;
 }
-.container3 .CAROUSEL-content p {
-  padding-top: 2rem;
-  font-size: 2rem;
+.container3 .carousel .item_selected {
+  display: block;
+}
+.container3 .carousel .car_nav {
+  width: 50vw;
+  height: 5vh;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+.container3 .carousel .car_nav .btn {
+  height: 1rem;
+  width: 1rem;
+  display: inline-block;
+  background-color: rgba(69, 134, 39, 0.3);
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.container3 .carousel .car_nav .btn_selected {
+  background-color: rgba(3, 37, 14, 0.5);
 }
 
-.main {
+.container4 {
+  height: 100vh;
   width: 100vw;
-  height: 100vh;
-}
-.main .container4 {
-  height: 100vh;
-  width: 100wh;
-  background-image: linear-gradient(rgba(127, 209, 169, 0.5), rgba(62, 83, 70, 0.5)), url(/img/co3.png);
+  background-image: linear-gradient(rgba(92, 125, 109, 0.5), rgba(149, 204, 170, 0.5)), url(/img/co3.png);
   background-size: cover;
   background-position: center;
 }
